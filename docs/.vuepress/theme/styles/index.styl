@@ -1,0 +1,121 @@
+@import 'util';
+@import 'buttons';
+@import 'layout-center';
+@import 'header';
+@import 'sidebar';
+@import 'video';
+@import 'code-copy';
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// apply scrolling by default excluding firefox due to trigger issues
+html.smooth-scroll {
+	scroll-behavior: smooth;
+}
+.theme-default-content {
+	margin-top: 64px !important;
+	padding-top: 2rem !important;
+}
+#app .sidebar .sidebar-group.is-sub-group a.sidebar-link {
+	display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+aside.sidebar > .sidebar-links {
+	border-right: 1px solid #d9d9d9;
+}
+@supports (-moz-appearance: none) {
+	html.smooth-scroll {
+		scroll-behavior: auto;
+	}
+}
+
+#app {
+	.navbar {
+		position: sticky;
+	}
+
+	.navbar .logo {
+		width: 7rem;
+		height: auto;
+		margin-top: 8px;
+		padding: 1px 3px 0px 0;
+		vertical-align: top;
+	}
+
+	.site-name {
+		display: none !important;
+	}
+
+	@media (min-width: $MQMobile) {
+		.page-nav {
+			padding: 2rem 0 0 0;
+		}
+	}
+}
+nav.breadcrumbs {
+	max-width: 100% !important;
+	display: none !important;
+}
+.custom-block.callout {
+	background-color: lighten($badgeTipColor, 95%);
+	padding: 0.1rem 1.5rem;
+	border-color: $accentColor;
+	border-left-width: 0.5rem;
+	border-left-style: solid;
+}
+
+.custom-block.right {
+	float: right;
+	padding: 1em 0 1em 1em;
+}
+
+.custom-block.left {
+	float: left;
+	padding: 1em 1em 1em 0em;
+}
+
+:root {
+	--accent-color: $accentColor;
+	--text-color: $textColor;
+	--border-color: $borderColor;
+	--code-bg-color: $codeBgColor;
+	--highlight-color: $highlightColor;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+
+table.comparison {
+	table-layout: fixed;
+}
+
+table.comparison > tr, table.comparison > tr > th, table.comparison > tr > td {
+	border: none;
+}
+
+table.comparison > tr > td:nth-child(1) {
+	font-weight: bold;
+}
+
+table.comparison > tr > th:nth-child(1) {
+	width: 25%;
+}
+
+table.comparison > tr > th {
+	width: calc(((100% - 25%) / 2));
+}
+
+table.comparison table {
+	margin: 0.4rem 0;
+}
+
+table.comparison table th, table.comparison table td {
+	padding: 0.2em 0.5em;
+}

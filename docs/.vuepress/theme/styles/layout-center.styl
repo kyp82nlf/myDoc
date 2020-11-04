@@ -1,0 +1,54 @@
+// draft center layout
+.theme-container,.navbar {
+	max-width: 100% !important;
+	background: #000;
+}
+.theme-default-content {
+	max-width: 100% !important;
+	background: #fff !important;
+}
+.theme-container, .navbar {
+	@extend .max-w-screen-xl;
+	@extend .mx-auto;
+	@extend .relative;
+}
+.dropdown-wrapper .dropdown-title, .dropdown-wrapper .mobile-dropdown-title {
+	color: #fff !important;
+}
+.navbar .links {
+	height: 2.6rem !important;
+	background-color: #000 !important;
+}
+.page {
+	background: #fff;
+}
+.dropdown-wrapper .mobile-dropdown-title {
+	line-height: 2.6rem !important;
+}
+.theme-default-content:not(.custom) {
+	margin: inherit;
+
+	& > h1 {
+		padding-top: 1em;
+	}
+}
+
+@media (min-width: $MQNarrow) {
+	.sidebar {
+		position: fixed;
+		left: inherit;
+		border-right: none;
+	}
+
+	footer.page-edit {
+		margin: inherit;
+	}
+}
+
+.theme-default-content:not(.custom) {
+	margin: inherit;
+
+	& > h1 {
+		padding-top: 1em;
+	}
+}

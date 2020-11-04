@@ -1,0 +1,102 @@
+header.navbar {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 64px;
+}
+header.navbar .links {
+	position: absolute;
+	z-index: 10;
+}
+@media (min-width: $MQNarrow) {
+	header.navbar {
+		display: flex;
+
+		.home-link {
+			padding-right: 4rem;
+		}
+
+		.links {
+			position: static;
+			flex: 1 1 auto;
+			justify-content: flex-end;
+
+			input, .suggestions {
+				width: 10em;
+			}
+
+			input:focus, .suggestions {
+				width: 20em;
+			}
+			.nav-links {
+				margin-left: 30px;
+			}
+		}
+	}
+	.theme-container {
+		max-width: 1280px!important;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: $MQMobile) {
+	.sidebar-button {
+		color: #fff;
+	}
+	header.navbar .links {
+		input {
+			// prevent zooming on iOS
+			box-sizing: border-box;
+			font-size: 1rem;
+
+			&:focus {
+				width: 100%;
+			}
+		}
+	}
+	header.navbar .links:focus-within {
+		    width: 100% !important;
+    		padding-left: 3rem !important;
+	}
+	header.navbar .links:focus-within .nav-links {
+		display: none;
+	}
+	.navbar .links .search-box {
+		flex: 1 !important;
+	}
+	.nav-dropdown {
+		    height: auto !important;
+    box-sizing: border-box;
+    max-height: calc(100vh - 2.7rem);
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    padding: 0.6rem 0;
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
+    text-align: left;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    margin: 0;
+	}
+}
+
+@media (max-width: $MQMobile) {
+	.home-link {
+		float: left;
+	}
+	.navbar .can-hide {
+		display: block !important;
+	}
+	.links {
+		padding-left: 0 !important;
+		display: flex;
+		justify-content: flex-end;
+		.nav-links {
+			margin-left: 40px;
+		}
+	}
+}
